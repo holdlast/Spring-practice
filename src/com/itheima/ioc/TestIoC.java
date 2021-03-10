@@ -5,7 +5,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class TestIoC {
     public static void main(String[] args) {
-        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("com/itheima/ioc/applicationContext.xml");
         UserDao userDao = (UserDao) applicationContext.getBean("userDao");
         userDao.say();
     }
