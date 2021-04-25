@@ -1,6 +1,6 @@
 package com.itheima.jdk;
 import com.itheima.aspect.MyAspect;
-import java.lang.reflect.InvocationHandler;
+
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
@@ -11,7 +11,7 @@ public class JdkProxy {
         this.userDao = userDao;
         ClassLoader classLoader = JdkProxy.class.getClassLoader();
         Class[] clazz = userDao.getClass().getInterfaces();
-        return Proxy.newProxyInstance(classLoader,clazz, this);
+        return Proxy.newProxyInstance(classLoader,clazz,this::invoke);
     }
     public Object invoke(Object proxy, Method method,Object[] args) throws Throwable{
         MyAspect myAspect = new MyAspect();
