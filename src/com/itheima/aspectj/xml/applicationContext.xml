@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:bean="http://www.springframework.org/schema/aop"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+         http://www.springframework.org/schema/aop
+         https://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+<!--       目标类-->
+        <bean id="userDao" class="com.itheima.jdk.UserDaoImpl"/>
+<!--    切面-->
+        <bean id="myAspect" class="com.itheima.aspectj.xml.MyAspect"/>
+<!--        aop编程-->
+        <aop:config>
+                <aop:aspect  ref="myAspect">
+                        <aop:pointcut expression="execution(* com.itheima.jdk.*.*(..))" id="myPointCut"/>
+                            <aop:before method="myBefore" pointcut-ref="myPointCut"/>
+                            <aop:after-returning method="myAfterReturning" pointcut-ref="myPointCut" returning="returnVal" />
+                            <aop:around method="myAround" pointcut-ref="myPointCut"/>
+                            <aop:after-throwing method="myAfterThrowing" pointcut-ref="myPointCut" throwing="e"/>
+                            <aop:after method="myAfter" pointcut-ref="myPointCut"/>
+                </aop:aspect>
+        </aop:config>
+</beans>

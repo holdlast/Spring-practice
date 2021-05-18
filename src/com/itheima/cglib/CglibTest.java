@@ -7,6 +7,5 @@ public class CglibTest {
         UserDao userDao1 = (UserDao) cglibProxy.creatProxy(userDao);
         userDao1.addUser();
         userDao1.deleteUser();
-
     }
 }

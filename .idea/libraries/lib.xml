@@ -18,6 +18,8 @@
       <root url="jar://$PROJECT_DIR$/lib/spring-jms-5.2.3.RELEASE.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/spring-oxm-5.2.3.RELEASE.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/spring-aspects-5.2.3.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/aspectjweaver-1.8.10.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../mysql-connector-java-8.0.25/mysql-connector-java-8.0.25/mysql-connector-java-8.0.25.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
